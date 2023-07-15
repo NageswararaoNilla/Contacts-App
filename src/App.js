@@ -1,5 +1,5 @@
 import {Component} from 'react'
-import {v4} from 'uuid'
+import {v4 as uuidv4} from 'uuid'
 
 import ContactItem from './components/ContactItem'
 
@@ -8,19 +8,20 @@ import './App.css'
 const initialContactsList = [
   {
     //  id: 1,
-    id: v4(),
+   // id: v4(),
+    id: uuidv4()
     name: 'Ram',
     mobileNo: 9998988888,
     isFavorite: false,
   },
   {
-    id: v4(),
+    id: uuidv4(),
     name: 'Pavan',
     mobileNo: 8888866666,
     isFavorite: true,
   },
   {
-    id: v4(),
+    id: uuidv4(),
     name: 'Nikhil',
     mobileNo: 9999955555,
     isFavorite: false,
@@ -49,7 +50,7 @@ class App extends Component {
     event.preventDefault()
     const {name, mobileNo} = this.state
     const newContact = {
-      id: v4(),
+      id: uuidv4(),
       name,
       mobileNo,
       isFavorite: false,
